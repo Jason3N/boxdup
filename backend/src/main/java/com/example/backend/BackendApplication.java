@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.backend.User.User;
+
 @SpringBootApplication
 public class BackendApplication {
 
@@ -19,9 +21,7 @@ public class BackendApplication {
 class WebsiteController {
 
     @GetMapping("/")
-    public List<User> getUsers() {
-        return List.of(
-            new User(1, "jason", "password")  // Corrected to match the constructor
-        );
-    }
+    public String test() {
+		return "hello meow meow!";
+	}
 }
