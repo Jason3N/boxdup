@@ -18,4 +18,20 @@ public class UserService {
         return userRepository.findAll();
     }
 
+    public List<String> getAllUsernames() {
+        return userRepository.findAllUsernames();
+    }
+
+    public String getPasswordByName(String password) {
+        return userRepository.findUserByPassword(password);
+    }
+
+    public Boolean existsByUsername(String username) {
+        return userRepository.existsByUsername(username);
+    }
+
+    public void insertUser(String username, String password) {
+        userRepository.insertUser(username, password);
+    }
+    
 }
