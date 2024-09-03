@@ -8,10 +8,10 @@ import jakarta.persistence.Table;
 
 
 @Entity
-@Table(name = "users")  // Use double quotes to escape the table name
+@Table(name = "users")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  // Use IDENTITY for PostgreSQL serial behavior
     private int id;
     private String username;
     private String password;

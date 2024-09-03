@@ -7,12 +7,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
 
     @Autowired
     private UserRepository userRepository;
+
+    public void deleteUser(String username) {
+        userRepository.deleteUser(username);
+    }
 
     public List<User> getAllUsers() {
         return userRepository.findAll();
@@ -28,6 +33,12 @@ public class UserService {
 
     public Boolean existsByUsername(String username) {
         return userRepository.existsByUsername(username);
+    }
+
+    public Optional<User> CheckIfLogin(String username, String password) {
+        User user = userRepository.CheckIfLogin(username, password);
+
+        return Optional.ofNullable(user);
     }
 
     public void insertUser(String username, String password) {
