@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Signup from './components/Signup'
 import Contact from './components/Contact'
+import Profile from './components/Profile'
 import { Route, Routes } from 'react-router';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/join" element={<Signup />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/profile" element={<Profile />}  />
         </Routes>
       </div>
     </div>
